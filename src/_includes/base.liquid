@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<head>
+    <title>ice cream club @ UofA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+    <!-- Flow Circular is only useful for placeholder text, remove in prod -->
+    <link href="https://fonts.googleapis.com/css2?family=Rosario&family=Flow+Circular&family=Ruluko&family=Rouge+Script&display=swap" rel="stylesheet">
+    <meta name="description" content="ice cream club @ UofA is a student-run club at the University of Alberta that prides itself on making the best ice cream that can be found on campus.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #EEFFF1;
+            font-family: 'Rosario', sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Rosario', sans-serif;
+            text-shadow: 1.89062px 1.89062px 0 rgba(117, 169, 98, 0.41);
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        #logo {
+            display: inline-flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        nav {
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            padding: 10px 20px;
+            background: rgba(125, 215, 129, 0.22);
+            box-shadow: inset 1px 1px 7px rgba(0, 0, 0, 0.03);
+            filter: blur(0.4px);
+        }
+
+        nav a {
+            font-size: 20px;
+            color: #525A61;
+            text-shadow: 0 1px 4px rgba(4, 204, 0, 0.25);
+            text-decoration: none;
+        }
+
+        main {
+            text-align: left;
+        }
+
+        @media only screen and (min-width: 992px) {
+            nav {
+                width: 672px;
+                justify-content: space-evenly;
+            }
+
+            main {
+                width: 672px;
+                margin: 10px auto auto;
+            }
+
+            h1 {
+                font-size: 50px;
+            }
+
+            nav,
+            .card {
+                border-radius: 7px;
+            }
+        }
+
+        @media only screen and (min-width: 1200px) {
+            nav {
+                width: 1072px;
+                justify-content: space-evenly;
+            }
+
+            main {
+                width: 1072px;
+                margin: 10px auto auto;
+            }
+
+            h1 {
+                font-size: 50px;
+            }
+
+            nav,
+            .card {
+                border-radius: 7px;
+            }
+            
+            .posts {
+                gap: 10px;
+            }
+        }
+
+        .signoff {
+            font-family: 'Rouge Script', sans-serif;
+            text-align: right;
+            font-size: 50px;
+        }
+
+        .card {
+            font-family: 'Rosario', sans-serif;
+            padding: 7px 20px;
+            background: #e6ffe9;
+            filter: blur(0.4px);
+            box-shadow: 0 1px 4px rgba(193, 197, 193, 0.58);
+        }
+
+        /* Placeholder text */
+        .card-content {
+            font-family: 'Flow Circular', Wingdings, sans-serif;
+        }
+
+        .card-header {
+            font-size: 34px;
+            margin: 5px 0;
+        }
+        .card-footer {
+            margin: 0 0 5px;
+        }
+
+        /* Home page */
+        .posts {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-actions {
+            display: flex;
+            justify-content: right;
+            gap: 10px;
+        }
+
+        a {
+            color: #525A61;
+        }
+        a::visited {
+            color: #525A61;
+        }
+
+        .post-preview {
+            position: relative;
+            overflow: hidden;
+        }
+        .post-preview::before {
+            content: '';
+            background: linear-gradient(transparent, #e6ffe9);
+            height: 50px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .post-preview::after {
+            content: '...';
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1 id="logo"><img
+            src="/img/logo.svg"
+            width="113"
+            height="128"> <span>ice&nbsp;cream&nbsp;club @&nbsp;UofA</span></h1> -->
+
+    <h1 id="logo"><img
+            src="{% includeFileURI './img/logo.svg' 'image/svg+xml' %}"
+            width="113"
+            height="128"> <span>ice&nbsp;cream&nbsp;club @&nbsp;UofA</span></h1> 
+    <nav>
+        <a href="/">Home</a>
+        <a href="#">Events</a>
+        <a href="#">Members</a>
+        <a href="#">About</a>
+        <a href="#">How to join</a>
+        <a href="#">Gallery</a>
+    </nav>
+    <main>
+        {{ content }}
+    </main>
+</body>

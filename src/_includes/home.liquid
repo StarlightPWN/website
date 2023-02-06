@@ -1,0 +1,16 @@
+---
+layout: base.liquid
+---
+
+<div class="posts">
+    {% for post in collections.posts %}
+        <div class="card">
+            <h2 class="card-header">{{ post.data.title | escape }}</h2>
+            <p class="card-content post-preview">{{ post.data.preview }}</p>
+            <p class="card-footer card-actions">
+                {{ post.date | asPostDate }}
+                <a href="{{ post.url | url }}" class="card-action">Read more</a>
+            </p>
+        </div>
+    {% endfor %}
+</div>

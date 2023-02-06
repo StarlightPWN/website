@@ -1,0 +1,12 @@
+---
+layout: base.liquid
+permalink: "/posts/{{ title | slugify }}/"
+---
+
+<div class="card">
+    <h2 class="card-header">{{ title | escape }}</h2>
+    <div class="card-content">{{ content }}</div>
+    <p class="card-footer">
+        {{ date | asPostDate }}&nbsp;&bullet;&nbsp;{{ author  }}
+    </p>
+</div>
